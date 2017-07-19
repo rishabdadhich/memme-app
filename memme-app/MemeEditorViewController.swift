@@ -172,14 +172,14 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
     func generateMemedImage() -> UIImage {
-        toolBarVisible(false)
+        toolBarVisible(true)
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        toolBarVisible(true)
+        toolBarVisible(false)
         return memedImage
     }
     
