@@ -139,6 +139,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     func unsubscribeFromKeyboardNotifications() {
         
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
     func keyboardWillHide(_ notification:Notification) {
@@ -151,13 +152,13 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     ///////// save memme //////////
     
     
-    struct Meme {
-        var topText:String
-        var bottomText:String
-        var originalImage:UIImage
-        var memed:UIImage
-        
-    }
+//    struct Meme {
+//        var topText:String
+//        var bottomText:String
+//        var originalImage:UIImage
+//        var memed:UIImage
+//        
+//    }
     
     func shareShafely(memedImage:UIImage) {
         if imagePickerView.image != nil && topTextField.text != nil && bottomTextFeild.text != nil {
@@ -167,7 +168,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             let image = imagePickerView.image!
             
             let meme = Meme(topText: top, bottomText:bottom, originalImage: image, memed: memedImage)
-            
+            (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
+
         }
     }
     
