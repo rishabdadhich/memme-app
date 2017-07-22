@@ -77,7 +77,7 @@ class MemeCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collection", for: indexPath) as! MemeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! MemeCollectionViewCell
     let meme = memes[indexPath.row]
        cell.imegView?.image = meme.memed
         cell.imegView?.contentMode = UIViewContentMode.scaleAspectFill
