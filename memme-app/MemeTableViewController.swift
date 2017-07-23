@@ -9,7 +9,7 @@
 import UIKit
 
 class MemeTableViewController: UITableViewController,UIViewControllerTransitioningDelegate {
-
+    
     
     var memes = [Meme]()
     let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
@@ -17,34 +17,29 @@ class MemeTableViewController: UITableViewController,UIViewControllerTransitioni
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       memes = appDelegate.memes
-       tableView.reloadData()
+        memes = appDelegate.memes
+        self.tableView.reloadData()
     }
-
-   
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
+    
+    
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return memes.count
     }
-
-  
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! MemeTableViewCell
         let meme = memes[indexPath.row]
         
         cell.imgView?.image = meme.memed
         cell.lblView?.text = "\(meme.topText) ... \(meme.bottomText)"
-
+        
         return cell
     }
     
-
-   
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             appDelegate.memes.remove(at: indexPath.row)  // added as per instructor
@@ -52,12 +47,12 @@ class MemeTableViewController: UITableViewController,UIViewControllerTransitioni
             tableView.reloadData()
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! MemeDetailViewController
         detailViewController.meme = memes[indexPath.row]
         navigationController!.pushViewController(detailViewController, animated: true)
-
+        
     }
     override var prefersStatusBarHidden: Bool{
         return true

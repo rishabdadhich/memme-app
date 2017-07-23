@@ -14,28 +14,15 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet weak var bottomTextFeild: UITextField!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var imagePickerView: UIImageView!
-    
-    
     @IBOutlet weak var toolBar: UIToolbar!
-    
-    
-    
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var camraButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
         saveButton.isEnabled = (imagePickerView.image != nil) ? true : false
-        
-        
-        
-    }
-    @IBOutlet weak var camraButton: UIBarButtonItem!
-    
-    
-    
-    
+        }
     
     override func viewWillDisappear(_ animated: Bool) {
         
@@ -52,9 +39,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         present(controller, animated: true, completion: nil)
     }
     
-    
-    
-    
     @IBAction func pickFromCamara(_ sender: Any) {
         pickImage(UIImagePickerControllerSourceType.camera)
     }
@@ -70,8 +54,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         dismiss(animated: true, completion: nil)
         saveButton.isEnabled = true
     }
-    
-    
     
     func textFieldAttributes(_ textInput:UITextField,defaultText:String){
         let memmeTextAttributes:[String:Any] = [
@@ -90,6 +72,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         camraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
         textFieldAttributes(topTextField, defaultText: "TOP")
@@ -149,17 +132,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         }
     }
     
-    ///////// save memme //////////
-    
-    
-//    struct Meme {
-//        var topText:String
-//        var bottomText:String
-//        var originalImage:UIImage
-//        var memed:UIImage
-//        
-//    }
-    
     func shareShafely(memedImage:UIImage) {
         if imagePickerView.image != nil && topTextField.text != nil && bottomTextFeild.text != nil {
             
@@ -169,7 +141,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             
             let meme = Meme(topText: top, bottomText:bottom, originalImage: image, memed: memedImage)
             (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
-
+            
         }
     }
     
@@ -189,9 +161,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         navBar.isHidden = visible
         toolBar.isHidden = visible
     }
-    
-    
-    
     @IBAction func saveAction(_ sender: Any) {
         
         let memeToShare = generateMemedImage()
@@ -200,9 +169,14 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         activityViewController.completionWithItemsHandler = { activity, success, items, error in
             if success {
                 self.shareShafely(memedImage: memeToShare)
+                
+                // for showing sent memes we have to dismiss controller
+                self.dismiss(animated: true, completion: nil)
             }
         }
         present(activityViewController, animated: true, completion: nil)
+        
+        
     }
     
     

@@ -11,29 +11,29 @@ import UIKit
 
 
 class MemeCollectionViewController: UICollectionViewController {
-
+    
     var memes = [Meme]()
     let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
-
-      @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      collectionView?.reloadData()
+        collectionView?.reloadData()
         memes = appDelegate.memes
         layoutCells()
     }
-
-   
-        struct Constants {
+    
+    
+    struct Constants {
         static let CellVerticalSpacing: CGFloat = 2
     }
     
-      func layoutCells() {
+    func layoutCells() {
         var cellWidth: CGFloat
         var numWide: CGFloat
         
-     
+        
         switch UIDevice.current.orientation {
         case .portrait:
             numWide = 3
@@ -46,9 +46,9 @@ class MemeCollectionViewController: UICollectionViewController {
         default:
             numWide = 4
         }
-       
+        
         cellWidth = collectionView!.frame.width / numWide
-       
+        
         cellWidth -= Constants.CellVerticalSpacing
         flowLayout.itemSize.width = cellWidth
         flowLayout.itemSize.height = cellWidth
@@ -58,28 +58,20 @@ class MemeCollectionViewController: UICollectionViewController {
         let actualCellVerticalSpacing: CGFloat = (collectionView!.frame.width - (numWide * cellWidth))/(numWide - 1)
         flowLayout.minimumLineSpacing = actualCellVerticalSpacing
         
-       
+        
         flowLayout.invalidateLayout()
     }
     
-
-  
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return memes.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! MemeCollectionViewCell
-    let meme = memes[indexPath.row]
-       cell.imegView?.image = meme.memed
+        let meme = memes[indexPath.row]
+        cell.imegView?.image = meme.memed
         cell.imegView?.contentMode = UIViewContentMode.scaleAspectFill
         return cell
     }
@@ -89,7 +81,7 @@ class MemeCollectionViewController: UICollectionViewController {
         destinationController.meme = meme
         navigationController?.pushViewController(destinationController, animated: true)
     }
-   
+    
     
     override var prefersStatusBarHidden: Bool{
         return true

@@ -9,27 +9,22 @@
 import UIKit
 
 class MemeDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var imgView: UIImageView!
     var meme:Meme! = nil
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-imgView.image = meme.memed
-      
+        imgView.image = meme.memed
+        
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
+    
     override var prefersStatusBarHidden: Bool{
         return true
     }
