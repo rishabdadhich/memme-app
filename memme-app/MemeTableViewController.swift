@@ -15,14 +15,11 @@ class MemeTableViewController: UITableViewController,UIViewControllerTransitioni
     let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         memes = appDelegate.memes
         self.tableView.reloadData()
     }
-    
-    
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows

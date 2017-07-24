@@ -41,20 +41,20 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="129"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F9t-on-7O2" id="Xpx-mm-NZF">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="128.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="129"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CXj-6h-bsl">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CXj-6h-bsl">
                                             <rect key="frame" x="8" y="0.0" width="145" height="128"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="128" id="PBb-8C-Mdd"/>
-                                                <constraint firstAttribute="width" constant="145" id="Xbs-Ei-zPW"/>
+                                                <constraint firstAttribute="width" constant="145" id="1x1-Hj-rw4"/>
+                                                <constraint firstAttribute="height" constant="128" id="kDL-0l-O1K"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsh-db-SHO">
-                                            <rect key="frame" x="161" y="42" width="44" height="33"/>
+                                            <rect key="frame" x="171" y="48" width="214" height="33"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="33" id="mAd-20-LjL"/>
+                                                <constraint firstAttribute="width" constant="214" id="xVU-gZ-jaL"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
@@ -62,13 +62,12 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="CXj-6h-bsl" secondAttribute="trailing" constant="253" id="CMz-nY-v37"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="CXj-6h-bsl" secondAttribute="bottom" constant="-7.3333333333333428" id="Hgx-NQ-NG0"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="tsh-db-SHO" secondAttribute="bottom" constant="45.666666666666657" id="Mrx-6g-191"/>
-                                        <constraint firstItem="tsh-db-SHO" firstAttribute="top" secondItem="Xpx-mm-NZF" secondAttribute="topMargin" constant="34" id="QtC-xA-siQ"/>
-                                        <constraint firstItem="CXj-6h-bsl" firstAttribute="top" secondItem="Xpx-mm-NZF" secondAttribute="topMargin" constant="-8" id="aAo-yL-tQx"/>
-                                        <constraint firstItem="tsh-db-SHO" firstAttribute="leading" secondItem="CXj-6h-bsl" secondAttribute="trailing" constant="8" id="ffI-AO-XwM"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="CXj-6h-bsl" secondAttribute="leading" id="qXu-IY-yHV"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="tsh-db-SHO" secondAttribute="bottom" constant="39.666666666666657" id="8Ei-PD-yag"/>
+                                        <constraint firstItem="tsh-db-SHO" firstAttribute="top" secondItem="Xpx-mm-NZF" secondAttribute="topMargin" constant="40" id="d1b-ZN-0FU"/>
+                                        <constraint firstItem="tsh-db-SHO" firstAttribute="leading" secondItem="CXj-6h-bsl" secondAttribute="trailing" constant="18" id="fea-eI-Y43"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="CXj-6h-bsl" secondAttribute="leading" id="iwd-lD-827"/>
+                                        <constraint firstItem="CXj-6h-bsl" firstAttribute="centerY" secondItem="Xpx-mm-NZF" secondAttribute="centerY" id="lUp-gt-Qoe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="tsh-db-SHO" secondAttribute="trailing" constant="21" id="yug-FR-S5u"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -92,7 +91,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fu-8t-LD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1633.3333333333335" y="-117.39130434782609"/>
+            <point key="canvasLocation" x="1631.8840579710147" y="-117.39130434782609"/>
         </scene>
         <!--Sent Items-->
         <scene sceneID="7hi-8X-5Jq">
@@ -116,7 +115,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="133" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="co1-0T-jpM">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="co1-0T-jpM">
                                             <rect key="frame" x="0.0" y="0.0" width="133" height="130"/>
                                         </imageView>
                                     </subviews>
@@ -165,31 +164,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Yt-Qd-BXv">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <items>
-                                    <navigationItem id="1p6-Qx-5Wp">
-                                        <barButtonItem key="leftBarButtonItem" title="sent memes" id="8W3-gW-lWm">
-                                            <connections>
-                                                <action selector="cancel:" destination="fg3-O2-s7K" id="eD6-Lm-XzW"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kyZ-lR-AhP">
-                                <rect key="frame" x="20" y="90" width="374" height="626"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kyZ-lR-AhP">
+                                <rect key="frame" x="35" y="58" width="344" height="658"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="kyZ-lR-AhP" secondAttribute="leading" id="3pn-Xp-D1Q"/>
-                            <constraint firstItem="ZDC-aZ-Nub" firstAttribute="top" secondItem="kyZ-lR-AhP" secondAttribute="bottom" constant="20" id="4e0-pT-ZvX"/>
-                            <constraint firstItem="5Yt-Qd-BXv" firstAttribute="top" secondItem="uFG-Ei-dkU" secondAttribute="bottom" constant="8" id="E3S-xt-rob"/>
-                            <constraint firstItem="kyZ-lR-AhP" firstAttribute="centerX" secondItem="dGD-yn-cy8" secondAttribute="centerX" id="aIa-U8-zPd"/>
-                            <constraint firstItem="kyZ-lR-AhP" firstAttribute="top" secondItem="5Yt-Qd-BXv" secondAttribute="bottom" constant="18" id="kT6-Td-cZE"/>
-                            <constraint firstItem="5Yt-Qd-BXv" firstAttribute="leading" secondItem="dGD-yn-cy8" secondAttribute="leadingMargin" constant="-20" id="mho-wa-Ney"/>
-                            <constraint firstItem="5Yt-Qd-BXv" firstAttribute="centerX" secondItem="dGD-yn-cy8" secondAttribute="centerX" id="zX1-Ul-pYi"/>
+                            <constraint firstItem="kyZ-lR-AhP" firstAttribute="leading" secondItem="dGD-yn-cy8" secondAttribute="leadingMargin" constant="15" id="53a-Ha-xnB"/>
+                            <constraint firstItem="kyZ-lR-AhP" firstAttribute="centerX" secondItem="dGD-yn-cy8" secondAttribute="centerX" id="OEC-tK-JZj"/>
+                            <constraint firstItem="kyZ-lR-AhP" firstAttribute="top" secondItem="uFG-Ei-dkU" secondAttribute="bottom" constant="38" id="eg6-25-up0"/>
+                            <constraint firstItem="ZDC-aZ-Nub" firstAttribute="top" secondItem="kyZ-lR-AhP" secondAttribute="bottom" constant="20" id="lpt-Fm-q6q"/>
                         </constraints>
                     </view>
                     <connections>
@@ -198,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2g-Vc-naa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2592.753623188406" y="739.4021739130435"/>
+            <point key="canvasLocation" x="2592.3913043478265" y="739.13043478260875"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -212,7 +196,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jEQ-CP-3AO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jEQ-CP-3AO">
                                 <rect key="frame" x="14" y="80" width="386" height="604"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nx-2y-pq9">
@@ -346,6 +330,6 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tuM-gJ-R9k"/>
+        <segue reference="OSK-kt-hcl"/>
     </inferredMetricsTieBreakers>
 </document>

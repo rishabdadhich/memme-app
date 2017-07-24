@@ -17,13 +17,13 @@ class MemeCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         collectionView?.reloadData()
         memes = appDelegate.memes
         layoutCells()
+
     }
-    
     
     struct Constants {
         static let CellVerticalSpacing: CGFloat = 2
